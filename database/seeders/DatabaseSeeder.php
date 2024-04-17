@@ -6,6 +6,10 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Genre; 
+use App\Models\Book;
+use Database\Seeders\UsersTableSeeder;
+use Database\Seeders\GenresTableSeeder;
+use Database\Seeders\BooksTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             GenresTableSeeder::class,
             BooksTableSeeder::class,
+            UsersTableSeeder::class,
         ]);
     }
 }

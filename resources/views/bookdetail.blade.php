@@ -15,7 +15,21 @@
     <p><strong>Number of Available Books:</strong> {{ $book->available }}</p>
     <p><strong>Description:</strong> {{ $book->description }}</p>
     @if($book->cover_image)
-        <img src="{{ $book->cover_image }}" alt="{{ $book->title }}">
+        <img src="{{ $book->cover_image }}" alt="{{ $book->title }}" class="mb-3">
     @endif
+
+    @auth
+        <div class="mt-4">
+            @if($book->hasOngoingRental(auth()->user()))
+                <p class="alert alert-warning">You have an ongoing rental process with this book.</p>
+            @else
+                <form action="{{ route('books.borrow', $book) }}" method="POST" class="d-grid gap-2 mb-3">
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Borrow this book</button>
+                </form>
+            @endif
+        </div>
+    @endauth
+
 </div>
 @endsection

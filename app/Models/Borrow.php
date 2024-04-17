@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Borrow extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'reader_id',
+        'book_id',
+        'status',
+    ];
+
     public function book()
     {
         return $this->belongsTo(Book::class);

@@ -12,7 +12,6 @@ class BookController extends Controller
         return view('bookdetail', ['book' => $book]);
     }
 
-
     public function search(Request $request)
     {
         $query = $request->get('query');
@@ -26,5 +25,26 @@ class BookController extends Controller
 
         return view('search', ['books' => $books]);
     }
+
+    
+
+    public function borrow(Book $book)
+    {
+        $existingBorrow = $book->borrows()
+            ->where('reader_id', auth()->id())
+            ->whereIn('status', ['PENDING', 'BORROWED'])
+            ->first();
+    
+        if (!$existingBorrow) {
+            $book->borrows()->create([
+                'reader_id' => auth()->id(),
+                'status' => 'PENDING',
+            ]);
+        }
+    
+        return redirect()->route('books.detail', $book);
+    }
+
+
 
 }
