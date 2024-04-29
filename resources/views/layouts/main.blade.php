@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> -->
     <title>Library Management System</title>
 </head>
 <body>
@@ -19,14 +19,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/genres">Genres</a>
-                </li>
+                
                 @auth
-                <li class="nav-item">
-                    <a class="nav-link" href="/rentals">My Rentals</a>
-                </li>
+                    @if(Auth::user()->isLibrarian())
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('genres.index') }}">Genre List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('books.create') }}">Add New Book</a>
+                        </li>
+                    @endif
+                    <li class="nav-item">
+                        @if(Auth::user()->isLibrarian())
+                            <a class="nav-link" href="/rentals">Rental List</a>
+                        @else
+                            <a class="nav-link" href="/rentals">My Rentals</a>
+                        @endif
+                    </li>
                 @endauth
+
             </ul>
 
           <!-- Right Side Of Navbar -->

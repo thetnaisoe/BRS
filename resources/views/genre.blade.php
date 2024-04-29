@@ -1,3 +1,4 @@
+
 @extends('layouts.main') 
 
 @section('content')
@@ -6,7 +7,7 @@
 
         <h3 class="mb-3">Books</h3>
         @foreach($books as $book)
-            <div class="card mb-4">
+            <div class="card mb-4 shadow-lg">
                 <div class="card-body">
                     <a href="{{ route('books.detail', $book->id) }}" style="text-decoration: none; color: black;">
                         <h4 class="card-title mb-1">{{ $book->title }}</h4>
@@ -19,3 +20,4 @@
         @endforeach
     </div>
 @endsection
+
