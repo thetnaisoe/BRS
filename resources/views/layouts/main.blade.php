@@ -21,6 +21,9 @@
                 </li>
                 
                 @auth
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('profile') }}">Profile</a>
+                </li>
                     @if(Auth::user()->isLibrarian())
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('genres.index') }}">Genre List</a>
@@ -45,8 +48,8 @@
                 <!-- Authentication Links -->
                         <!-- Search Bar -->
                 <form class="d-flex" action="{{ route('search') }}" method="GET">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search" name="query">
+                    <button class="btn btn-outline-success me-3 mt-1" type="submit">Search</button>
                 </form>
                 @guest
                     @if (Route::has('login'))

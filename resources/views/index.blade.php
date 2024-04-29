@@ -48,6 +48,7 @@
                 <div class="card bg-{{ $genre->style }} text-{{ $genre->style == 'light' ? 'dark' : 'white' }} shadow-lg">
                     <div class="card-body">
                         <h5 class="card-title">{{ $genre->name }}</h5>
+                        <p class="card-text">{{ $genre->style }}</p>
                     </div>
                 </div>
             </a>

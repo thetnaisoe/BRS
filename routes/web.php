@@ -5,6 +5,9 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ProfileController;
+
+
 Route::get('/', [MainPageController::class, 'index'])->name('index');
 
 Route::get('/search', [BookController::class, 'search'])->name('search');
@@ -27,6 +30,8 @@ Route::post('/genres/create', [GenreController::class, 'store'])->name('genres.s
 Route::get('/genres/{genre}/edit', [GenreController::class, 'edit'])->name('genres.edit')->middleware('auth');
 Route::put('/genres/{genre}', [GenreController::class, 'update'])->name('genres.update')->middleware('auth');
 Route::delete('/genres/{genre}', [GenreController::class, 'destroy'])->name('genres.destroy')->middleware('auth');
+
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile')->middleware('auth');
 
 Auth::routes();
 
