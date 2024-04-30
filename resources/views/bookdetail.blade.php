@@ -2,9 +2,9 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container mt-4 mb-5">
+<div class="container mt-5 mb-5">
     <div class="card shadow-lg">
-        <div class="card-body">
+        <div class="card-body p-4">
             <h2 class="card-title">{{ $book->title }}</h2>
             <p><strong>Author:</strong> {{ $book->authors }}</p>
             <p><strong>Genres:</strong> {{ $book->genres->pluck('name')->join(', ') }}</p>

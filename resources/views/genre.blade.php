@@ -2,7 +2,7 @@
 @extends('layouts.main') 
 
 @section('content')
-    <div class="container mt-4">
+    <div class="container mt-5">
         <h2 class="mb-3">Genre: {{ $genre->name }}</h2>
 
         <h3 class="mb-3">Books</h3>

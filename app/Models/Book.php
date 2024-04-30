@@ -34,4 +34,11 @@ class Book extends Model
             ->where('status', '!=', 'RETURNED')
             ->exists();
     }
+
+    public function getAvailableAttribute()
+    {
+        $rentedBooks = $this->borrows()->whereIn('status', ['PENDING', 'ACCEPTED'])->count();
+        return $this->in_stock - $rentedBooks;
+    }
+
 }

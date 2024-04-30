@@ -3,6 +3,7 @@
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\RentalController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProfileController;
@@ -32,6 +33,11 @@ Route::put('/genres/{genre}', [GenreController::class, 'update'])->name('genres.
 Route::delete('/genres/{genre}', [GenreController::class, 'destroy'])->name('genres.destroy')->middleware('auth');
 
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile')->middleware('auth');
+
+Route::get('/rentals', [RentalController::class, 'index'])->name('rentals.index')->middleware('auth');
+Route::get('/rentals/{borrow}', [RentalController::class, 'detail'])->name('rentals.detail')->middleware('auth');
+Route::put('/rentals/{borrow}', [RentalController::class, 'update'])->name('rentals.update')->middleware('auth');
+
 
 Auth::routes();
 

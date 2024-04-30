@@ -10,7 +10,7 @@
             <div class="card text-white bg-warning mb-3 shadow-lg">
                 <div class="card-header">Users</div>
                 <div class="card-body">
-                    <h5 class="card-title">42</h5>
+                    <h5 class="card-title">{{ $userCount }}</h5>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
             <div class="card text-white bg-success mb-3 shadow-lg">
                 <div class="card-header">Active Rentals</div>
                 <div class="card-body">
-                    <h5 class="card-title">50</h5>
+                    <h5 class="card-title">{{ $activeRentalsCount }}</h5>
                 </div>
             </div>
         </div>

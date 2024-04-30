@@ -13,6 +13,11 @@ class Borrow extends Model
         'reader_id',
         'book_id',
         'status',
+        'request_processed_at',
+        'request_managed_by',
+        'deadline',
+        'returned_at',
+        'return_managed_by',
     ];
 
     public function book()
@@ -33,5 +38,10 @@ class Borrow extends Model
     public function returnManager()
     {
         return $this->belongsTo(User::class, 'return_managed_by');
+    }
+
+    public function isLate()
+    {
+        return $this->deadline && new \DateTime() > new \DateTime($this->deadline);
     }
 }

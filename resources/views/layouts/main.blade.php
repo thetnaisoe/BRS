@@ -34,9 +34,9 @@
                     @endif
                     <li class="nav-item">
                         @if(Auth::user()->isLibrarian())
-                            <a class="nav-link" href="/rentals">Rental List</a>
+                            <a class="nav-link" href="{{ route('rentals.index') }}">Rental List</a>
                         @else
-                            <a class="nav-link" href="/rentals">My Rentals</a>
+                            <a class="nav-link" href="{{ route('rentals.index') }}">My Rentals</a>
                         @endif
                     </li>
                 @endauth
@@ -48,7 +48,7 @@
                 <!-- Authentication Links -->
                         <!-- Search Bar -->
                 <form class="d-flex" action="{{ route('search') }}" method="GET">
-                    <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search" name="query">
+                    <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search" name="query">
                     <button class="btn btn-outline-success me-3 mt-1" type="submit">Search</button>
                 </form>
                 @guest

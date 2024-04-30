@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
+<div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card shadow-lg">
                 <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                <div class="card-body p-4">
+                    <form method="POST" action="{{ route('register') }}" class="p-3">
                         @csrf
 
                         <div class="row mb-3">

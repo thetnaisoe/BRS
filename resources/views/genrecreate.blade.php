@@ -11,7 +11,7 @@
 
             <div class="form-group mb-4">
                 <label for="name" class="mb-2">Name</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required minlength="3" maxlength="255">
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" minlength="3" maxlength="255">
                 @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
