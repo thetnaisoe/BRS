@@ -26,6 +26,15 @@ Librarian Functions:
 - Manage Rentals: Oversee rental requests, approve or reject requests, and set deadlines for book returns.
 - Update Rental Status: Update rental status and manage returns.
 
+Technology Stack
+
+	•	Backend Framework: Laravel (PHP)
+	•	Database: SQLite
+	•	Frontend: Blade templating with Bootstrap CSS for responsive design
+	•	Authentication: Laravel’s built-in authentication system
+	•	Seeder: Faker for generating sample data
+	•	Version Control: Git
+
 Setup Instructions
 ------------------
 1. Clone the Repository:
@@ -82,18 +91,6 @@ Sample Credentials
   - Email: librarian@brs.com
   - Password: password!
 
-Project Structure
------------------
-/app
-    /Models            # Models for User, Book, Genre, Borrow
-    /Http/Controllers  # Controller logic for requests
-/database
-    /migrations        # Table creation scripts
-    /seeders           # Database seeding files
-/resources
-    /views             # Blade templates for the frontend
-/routes
-    web.php            # Application routes
 
 Testing
 -------
