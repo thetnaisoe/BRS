@@ -1,7 +1,109 @@
-<Name> Soe Thet Naing
-<Neptun ID> x0flxy
-This solution was submitted and prepared by stundent named above for the home assignment of the Web engineering course.
-I declare that this solution is my own work.
-I have not copied or used third party solutions.
-I have not passed my solution to my classmates, neither  made it public.
-Students’ regulation of Eötvös Loránd University (ELTE Regulations Vol. II. 74/C. § ) states that as long as a student presents another student’s work - or at least the significant part of it - as his/her own performance, it will count as a disciplinary fault. The most serious consequence of a disciplinary fault can be dismissal of the student from the University.
+
+Book Rental System (BRS)
+========================
+
+Project Overview
+----------------
+The Book Rental System (BRS) is a Laravel-based web application that allows users to interact with a digital library. The system provides functionality for both anonymous and authenticated users, with different roles and permissions for readers and librarians. Readers can browse, borrow, and view details of books, while librarians manage the collection and handle rental requests.
+
+This project is built using Laravel's powerful MVC framework, SQLite for database management, and Bootstrap for a responsive and user-friendly design.
+
+Key Features
+------------
+Anonymous Users:
+- Search Books: Search by author or title.
+- Browse by Genre: View a list of books categorized by genres.
+- Book Details: View information like title, author, release date, and available stock.
+
+Reader Functions (Authenticated Users):
+- Borrow Books: Submit a request to borrow books that are available in stock.
+- View Rentals: View active and past book rentals with detailed information.
+- Track Rental Status: Monitor rental request statuses (pending, accepted, rejected, returned).
+
+Librarian Functions:
+- Manage Books: Add, edit, or delete books.
+- Manage Genres: Organize books into genres by adding, editing, or deleting genres.
+- Manage Rentals: Oversee rental requests, approve or reject requests, and set deadlines for book returns.
+- Update Rental Status: Update rental status and manage returns.
+
+Setup Instructions
+------------------
+1. Clone the Repository:
+   ```
+   git clone https://github.com/your-username/book-rental-system.git
+   cd book-rental-system
+   ```
+
+2. Install PHP Dependencies:
+   ```
+   composer install
+   ```
+
+3. Install JavaScript Dependencies:
+   ```
+   npm install
+   ```
+
+4. Compile Frontend Assets:
+   ```
+   npm run prod
+   ```
+
+5. Configure Environment Variables:
+   Copy the .env.example file to create your own .env file:
+   ```
+   cp .env.example .env
+   ```
+
+6. Set Up the SQLite Database:
+   ```
+   touch database/database.sqlite
+   ```
+
+7. Run Migrations and Seed the Database:
+   ```
+   php artisan migrate:fresh --seed
+   ```
+
+8. Start the Laravel Development Server:
+   ```
+   php artisan serve
+   ```
+
+9. Access the Application:
+   Visit http://localhost:8000 in your browser.
+
+Sample Credentials
+------------------
+- Reader Account:
+  - Email: reader@brs.com
+  - Password: password!
+- Librarian Account:
+  - Email: librarian@brs.com
+  - Password: password!
+
+Project Structure
+-----------------
+/app
+    /Models            # Models for User, Book, Genre, Borrow
+    /Http/Controllers  # Controller logic for requests
+/database
+    /migrations        # Table creation scripts
+    /seeders           # Database seeding files
+/resources
+    /views             # Blade templates for the frontend
+/routes
+    web.php            # Application routes
+
+Testing
+-------
+Run tests with:
+```
+php artisan test
+```
+
+Future Improvements
+-------------------
+- User Notifications: Automatic emails for due dates and status updates.
+- Advanced Search: Filters like genre, language, and year.
+- Reporting Tools: Admin dashboard for rental statistics.
