@@ -26,14 +26,13 @@ Librarian Functions:
 - Manage Rentals: Oversee rental requests, approve or reject requests, and set deadlines for book returns.
 - Update Rental Status: Update rental status and manage returns.
 
-Technology Stack
-
-	•	Backend Framework: Laravel (PHP)
-	•	Database: SQLite
-	•	Frontend: Blade templating with Bootstrap CSS for responsive design
-	•	Authentication: Laravel’s built-in authentication system
-	•	Seeder: Faker for generating sample data
-	•	Version Control: Git
+Technology Stack:
+- **Backend Framework**: Laravel (PHP)
+- **Database**: SQLite
+- **Frontend**: Blade templating with Bootstrap CSS for responsive design
+- **Authentication**: Laravel’s built-in authentication system
+- **Seeder**: Faker for generating sample data
+- **Version Control**: Git
 
 Setup Instructions
 ------------------
